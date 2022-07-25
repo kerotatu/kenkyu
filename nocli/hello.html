@@ -2,12 +2,18 @@
     <head>
         <link rel="stylesheet" href="index.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
     </head>
     <body>
-        
         <div id="app">
-            {{ message }}
-        </div>
+            <svg viewbox="0 0 300 300" width="300" height="300">
+              <line :x1="x1" y1=100 x2=200 y2=200 stroke="black"></line>
+            </svg>
+            <div>
+              <input type="range" v-model="x1">
+            </div>
+          </div>
+          
         
         <script src="hello.js"></script>
     </body>
