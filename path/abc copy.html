@@ -3,7 +3,6 @@
     <svg width="1000px" height="1000px" @click.left="append" >
       <circle v-for="(circle,index) in circles":cx="circle.cx" :cy="circle.cy" :r="circle.r" @click.right.prevent="remove(index)"/>
     </svg>
-    <!--  -->
 </div>
    <script>
    new Vue({
