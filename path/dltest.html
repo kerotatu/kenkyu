@@ -1,0 +1,43 @@
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-json-csv@2.1.0/dist/vue-json-csv.common.min.js"></script>
+    <h1>aaaa</h1>
+    <VueJsonToCsv :json-data="csvData" :csv-title="csvファイルのタイトル" :labels="labels">
+      <button @click.right="download">
+        csvダウンロード
+      </button>
+    </VueJsonToCsv>
+</head>
+<script>
+  export default {
+    components: {
+      VueJsonToCsv,
+    },
+  
+    data() {
+      return {
+        csvData: [],
+  　　　 //labelsはcsvの各データのラベルを決められます。
+        labels: {
+          id: { title: "ID" },
+          url: { title: "URL" },
+          name: { title: "購入者" },
+          purchaseDate: { title: "申込購入日" },
+        },
+      }
+    },
+  
+    methods: {
+      download() {
+        // date型とか変換したいときはこのタイミングで変換
+        this.jsonData.forEach((data) => {
+          this.csvData.push({
+            id: data.id,
+            url: data.url,
+            purchaseDate: data.purchaseDate,
+          });
+        });
+      }
+    }
+  }
+  </script>

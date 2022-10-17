@@ -1,9 +1,8 @@
 <div id="container">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue-json-csv@2.1.0/dist/vue-json-csv.common.min.js"></script>
-    <svg width="1000px" height="1000px" @click.left="append">
+    <svg width="1000px" height="1000px" @click.left="append" >
       <circle v-for="(circle,index) in circles":cx="circle.cx" :cy="circle.cy" :r="circle.r" @click.right.prevent="remove(index)" @click.stop.left="drawLine(index)"/>
-      <line v-for="line in lines":x1="line.x1":x2="line.x2":y1="line.y1":y2="line.y2"stroke="black"/>
+      <line v-for="line in lines":x1="line.x1":x2="line.x2":y1="line.y1":y2="line.y2" stroke="black"/>
     </svg>    
 </div>
    <script>
@@ -72,13 +71,7 @@
         this.lineIndex++
         console.log("a")
       }
-
       },
-      download(){
-        this.jsonData.forEach((data)=>{
-
-        })
-      }
     }
    });
    </script>
